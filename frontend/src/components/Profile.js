@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = ()=>{
-    const location = useLocation();
+    // const location = useLocation();
     const navigate = useNavigate();
     const [user, setUser] = useState({ name: "", email: "" })
     const [friend, setFriend] = useState([])
-    const callmexx = (id)=> {
-      navigate(`/profile/${id}`, { state: id });
-    }
+    // const callmexx = (id)=> {
+    //   navigate(`/profile/${id}`, { state: id });
+    // }
     // const user = location.state;
     useEffect(() => {
       const res = JSON.parse(localStorage.getItem('user'));

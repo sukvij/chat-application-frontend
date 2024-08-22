@@ -1,5 +1,5 @@
 // src/Chat.js
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import useWebSocket from 'react-websocket';
 
 const Faltu = ({ userID }) => {
@@ -8,7 +8,7 @@ const Faltu = ({ userID }) => {
   const [receiverID, setReceiverID] = useState("");
 
   const socketUrl = `ws://localhost:8080/ws?id=${userID}`;
-  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
+  const { sendMessage, lastMessage } = useWebSocket(socketUrl);
 
   useEffect(() => {
     if (lastMessage !== null) {
